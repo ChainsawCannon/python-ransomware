@@ -16,8 +16,8 @@
 ![Screenshot of the wallpaper used on wannacry ransomware](https://media.licdn.com/dms/image/v2/C5612AQG8pqrkoblkJg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1520158949029?e=2147483647&v=beta&t=nfv6WkIDJzlASoK0luv7GwDhEBCy5QxB92Fvbg5ENXs)
 
 ## Projects that inspired this and resources I used
-[Ransomware-PoC by Jimmy-ly00](https://github.com/jimmy-ly00/Ransomware-PoC)
-[Python-Ransomware by ncorbuk](https://github.com/ncorbuk/Python-Ransomware)
+[Ransomware-PoC by Jimmy-ly00](https://github.com/jimmy-ly00/Ransomware-PoC),
+[Python-Ransomware by ncorbuk](https://github.com/ncorbuk/Python-Ransomware),
 [Simple Ransomware Script in Python by Emmanuel Munyite](https://dev.to/munyite001/simple-ransomware-script-in-python-48id)
 
 Thanks for reading! - Shay (They/Them)
