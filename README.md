@@ -2,7 +2,7 @@
 # LEGAL DISCLAIMER: THE FOLLOWING PROGRAM HAS BEEN CREATED FOR EDUCATIONAL PURPOSES ONLY. PLEASE DO NOT USE THIS REPOSITORY FOR CRIMINAL ACTIONS OR THIS REPOSITORY WILL BE TAKEN DOWN. IF RUNNING PLEASE RUN ON A VIRTUAL MACHINE!!
 ![picture of ransomware running on a virtual machine](https://chainsawcannon.neocities.org/images/ransomwaretest.png)
 ## About
-  The following program is made to research how programs such as wannacry and other ransomware function. This program encrypts and decrypts files.
+  The following program is made to research how programs such as wannacry and other ransomware function. This program encrypts and decrypts files. No AI generation was used in the making of this program.
 
 ## How it works
   The main.py file will give options to encrypt or decrypt files, in this case encrypting files allows a user to select a directory of their choice and it feeds it to the encryption function. A key is generated using the Fernet symmetric encryption algorithm that gets saved to a key file. The encryption function will then go through your file directory with os.scandir(), skipping desktop.ini specifically for encryption and decryption due to being an important windows file for specific folders. Then with the generated key file from the keygen function encrypts files in the directory. 
